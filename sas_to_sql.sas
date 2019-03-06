@@ -222,7 +222,7 @@ For each client, pull their records into the new EDW table
                 %END;
                 
                 /* Loop through the current year */
-                %DO m = &start_mo. %TO &end_mo.;
+                %DO m = 1 %TO &end_mo.;
                     %LET iter_yearmo = %SYSFUNC(CATS(&iter_year., &m.));
                     /* Add a leading 0 to the month if needed
                        (to comply with PDW/EDW yearmonth format) */
